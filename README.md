@@ -21,11 +21,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
-    <link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+	<link rel="stylesheet" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+	<script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
 ```
 * In body section add the following div element
 ```html
