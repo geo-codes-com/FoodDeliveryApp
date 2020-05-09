@@ -68,6 +68,11 @@ ui.getControl('mapsettings').setAlignment('top-left');
 var mapEvents = new H.mapevents.MapEvents(map);
 var behavior = new H.mapevents.Behavior(mapEvents);
 ```
+* Add placeService and route service instanceof
+```javascript
+var placesService = platform.getPlacesService();
+var router = platform.getRoutingService();
+```
 * Type the following code to enable user to determine his location 
 ```javascript
 var myLocation;
