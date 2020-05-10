@@ -68,12 +68,12 @@ ui.getControl('mapsettings').setAlignment('top-left');
 var mapEvents = new H.mapevents.MapEvents(map);
 var behavior = new H.mapevents.Behavior(mapEvents);
 ```
-* Add placeService and route service instanceof
+* Add placeService and routingService instance
 ```javascript
 var placesService = platform.getPlacesService();
 var router = platform.getRoutingService();
 ```
-* Type the following code to enable user to determine his location 
+* Type the following code to enable user to determine his location and find all restaurants around him
 ```javascript
 var myLocation;
 map.addEventListener('tap',addLoc);
@@ -106,7 +106,7 @@ function addLoc(evt){
 	});
 }
 ```
-* Add The Following event to find select restaurant
+* Add The Following event to select a restaurant
 ```javascript
 map.addEventListener('tap', function (evt) {
 	if (evt.target instanceof H.map.Marker) {
@@ -121,7 +121,7 @@ map.addEventListener('tap', function (evt) {
 	}
 });
 ```
-* Add Following to calculate the best route
+* Add Following code to calculate the best route
 ```javascript
 function showRoute(restPos){
 	var routingParams = {
