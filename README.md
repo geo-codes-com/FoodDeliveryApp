@@ -76,7 +76,6 @@ var router = platform.getRoutingService();
 * Type the following code to enable user to determine his location and find all restaurants around him
 ```javascript
 var myLocation;
-map.addEventListener('tap',addLoc);
 function addLoc(evt){
 	var coords = map.screenToGeo(
 		evt.currentPointer.viewportX,
@@ -118,6 +117,8 @@ map.addEventListener('tap', function (evt) {
 		ui.addBubble(bubble);
 		let restPos= evt.target.getGeometry();
 		showRoute(restPos);
+	}else{
+		addLoc(evt);
 	}
 });
 ```
@@ -152,3 +153,44 @@ function showRoute(restPos){
 	});
 }
 ```
+## Display Route Directions
+* After map Container element add the following HTML elements
+```html
+<div id="directions">
+	<h5> Directions </h5>
+	<div id="panel"></div>
+</div>
+```
+* Inside style tag add the following statements
+```css
+#directions{
+	position: absolute;
+	top: 65px; right:20px;
+	box-shadow: 2px 2px 2px gray;
+	padding: 15px; overflow-y: scroll;
+	width: 300px; max-height: 400px;
+	background-color:rgba(247, 247, 252, 1.0);
+}
+```
+* inside calculateRoute block add the following code
+```javascript
+let directions = route.leg[0].maneuver ;
+displayDirections(directions);
+```
+* Add displayDirections function
+```javascript
+function displayDirections(directions){
+	let totalTime = 0 ;
+	const fragment = document.createDocumentFragment();
+	for (let i = 0;i < directions.length; i++){
+		totalTime += directions[i].travelTime ;
+		instructions = directions[i].instruction;
+		document.getElementById("panel").innerHTML += '<hr>' + instructions;
+	}
+}
+```
+
+* Save your changes and launch your web page, your web page should look like the following figure
+
+![Alt text](/img/scn1.png)
+
